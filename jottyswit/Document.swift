@@ -25,33 +25,3 @@ class Document: UIDocument {
         
     }
 }
-
-class PDFDocView {
-    var pdfView : PDFView!
-    
-    //private let pdfDrawer = PageDrawer()
-    //private let pdfDrawingGestureRecognizer = DrawingGestureRecognizer()
-    
-    //init(width: CGFloat, height: CGFloat)
-    init(){
-        
-        self.pdfView = PDFView()
-        self.pdfView.backgroundColor = UIColor.systemGray2
-        self.pdfView.translatesAutoresizingMaskIntoConstraints = false
-        self.pdfView.autoScales = true
-        
-//        self.pdfView.addGestureRecognizer(pdfDrawingGestureRecognizer)
-//        pdfDrawingGestureRecognizer.drawingDelegate = pdfDrawer
-//        pdfDrawingGestureRecognizer.isEnabled = true
-//        pdfDrawingGestureRecognizer.cancelsTouchesInView = false
-//        self.pdfView.isUserInteractionEnabled = true
-//        pdfDrawer.pdfView = self.pdfView
-//
-    }
-    
-    func changeDrawMode(){
-        //pdfDrawingGestureRecognizer.toggleDraw = !pdfDrawingGestureRecognizer.toggleDraw
-    }
-    
-        
-}
