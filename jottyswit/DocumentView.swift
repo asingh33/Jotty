@@ -10,9 +10,9 @@ import SwiftUI
 import PDFKit
 
 struct DocumentView: View {
-    var document: UIDocument
-    var dismiss: () -> Void
     var pdfView: PDFViewUI!
+    var dismiss: () -> Void
+    
 
     var body: some View {
         VStack {
@@ -25,15 +25,13 @@ struct DocumentView: View {
 
 // This struct will return pdfView in UIView form to make it SwiftUI compatible
 struct PDFViewUI : UIViewRepresentable {
-
+    let pdfView = PDFView()
     var url: URL?
     init(url : URL) {
         self.url = url
     }
 
     func makeUIView(context: Context) -> UIView {
-        let pdfView = PDFView()
-
         if let url = url {
             pdfView.document = PDFDocument(url: url)
         }

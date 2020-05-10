@@ -65,15 +65,15 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     func presentDocument(at documentURL: URL) {
         let document = Document(fileURL: documentURL)
+        let pdfView = PDFViewUI(url : documentURL)
         
-        let pdfView = PDFViewUI(url: documentURL)
         // Access the document
         document.open(completionHandler: { success in
             if success {
                 // Display the content of the document:
-                let view = DocumentView(document: document, dismiss: {
+                let view = DocumentView(pdfView: pdfView, dismiss: {
                     self.closeDocument(document)
-                }, pdfView: pdfView)
+                })
 
                 let documentViewController = UIHostingController(rootView: view)
                 self.present(documentViewController, animated: true, completion: nil)
