@@ -12,7 +12,7 @@ import PDFKit
 struct DocumentView: View {
     var document: UIDocument
     var dismiss: () -> Void
-    var pdfView: PDFKitView!
+    var pdfView: PDFViewUI!
 
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct DocumentView: View {
 }
 
 // This struct will return pdfView in UIView form to make it SwiftUI compatible
-struct PDFKitView : UIViewRepresentable {
+struct PDFViewUI : UIViewRepresentable {
 
     var url: URL?
     init(url : URL) {
